@@ -7,3 +7,12 @@ const configuration = new Configuration({
 });
 
 const openai = new OpenAIApi(configuration);
+
+const readArticle = async (filePath) => {
+  try {
+    const data = fs.readFileSync(filePath, 'utf-8');
+    return data;
+  } catch (error) {
+    console.error('File error ', error);
+  }
+};
