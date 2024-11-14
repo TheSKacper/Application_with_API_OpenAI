@@ -32,7 +32,14 @@ ${articleContent}
       max_tokens: 1000,
       temperature: 0.7,
     });
+    return response.data.choices[0].text;
   } catch (error) {
     console.error('Error communicating with OpenAI API: ', error);
   }
 };
+
+const saveHtmlToFile = async (htmlContent) => {
+  fs.writeFileSync('artykul.html', htmlContent, 'utf-8');
+};
+
+
