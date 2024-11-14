@@ -42,4 +42,8 @@ const saveHtmlToFile = async (htmlContent) => {
   fs.writeFileSync('artykul.html', htmlContent, 'utf-8');
 };
 
-
+const processArticle = async () => {
+  const articleContent = await readArticle('artykul.txt');
+  const htmlContent = await generateHTML(articleContent);
+  saveHtmlToFile(htmlContent);
+};
