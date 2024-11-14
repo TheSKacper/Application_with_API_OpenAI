@@ -47,3 +47,5 @@ const processArticle = async () => {
   const htmlContent = await generateHTML(articleContent);
   saveHtmlToFile(htmlContent);
 };
+
+processArticle()
